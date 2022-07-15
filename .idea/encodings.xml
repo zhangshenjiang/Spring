@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/02_CronTask/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/02_CronTask/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/03_Mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/03_Mybatis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/04_Mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/04_Mybatis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/06_SpringMVC/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/06_SpringMVC/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpingBoot-Mybatis-Plus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpingBoot-Mybatis-Plus/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBoot-Redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBoot-Redis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBootRedis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBootRedis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo1/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

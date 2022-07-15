@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       https://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--开启MVC框架注解驱动-->
+    <mvc:annotation-driven/>
+
+    <!-- 使用默认的Servlet来响应静态文件-->
+    <mvc:default-servlet-handler />
+
+    <!--开启注解扫描器-->
+    <context:component-scan base-package="com.xln.spring.controller"/>
+
+    <!-- 添加视图解析器 -->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 前缀（目录）：在WEB-INF目录中的jsp目录下 -->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!-- 后缀（文件） 以.jsp结尾的文件-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>

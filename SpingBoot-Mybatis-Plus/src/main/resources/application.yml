@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.122.153:3306/dev?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: mysql
+
+server:
+  port: 8080
+
+mybatis-plus:
+  configuration:
+    # 开启SQL日志输出
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  # Mybatis-plus全局配置
+  global-config:
+    db-config:
+      # 设置实体类对应的数据库表的统一前缀，避免在每个实体对象上使用@TableName("t_xxx")
+#      table-prefix: t_
+
+      # 设置数据库表ID统一采用雪花算法自动生成
+      id-type: assign_id

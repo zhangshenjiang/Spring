@@ -1,0 +1,7 @@
+# Project exclude paths
+/02_CronTask/target/
+/03_Mybatis/target/
+/04_Mybatis/target/
+/06_SpringMVC/target/
+/SpringBoot-Redis/target/
+/SpringBootRedis/target/

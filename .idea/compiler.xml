@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="04_Mybatis" />
+        <module name="SpingBoot-Mybatis-Plus" />
+        <module name="03_Mybatis" />
+        <module name="02_CronTask" />
+        <module name="06_SpringMVC" />
+        <module name="SpringBoot-Redis" />
+        <module name="SpringBootRedis" />
+        <module name="demo1" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="02_CronTask" target="1.7" />
+      <module name="03_Mybatis" target="1.7" />
+      <module name="04_Mybatis" target="1.8" />
+      <module name="06_SpringMVC" target="1.8" />
+      <module name="demo1" target="1.8" />
+      <module name="SpingBoot-Mybatis-Plus" target="1.8" />
+      <module name="SpringBoot-Redis" target="8" />
+      <module name="SpringBootRedis" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

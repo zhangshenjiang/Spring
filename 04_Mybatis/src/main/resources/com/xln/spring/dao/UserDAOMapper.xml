@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xln.spring.dao.UserDAO">
+
+    <!--    useGeneratedKeys="true" 表示利用MySQL主键自动增加功能创建主键，此时在对象insert是可以不设置主键项，让系统自动赋值。 -->
+    <!--    keyProperty="id" 表示在insert之后会自动赋值给对象的id属性，以便于获取这个新建的id值。-->
+    <insert id="addUser" parameterType="com.xln.spring.entity.User" keyProperty="id" useGeneratedKeys="true">
+        insert into user
+        values (#{id}, #{name}, #{age}, #{birthday})
+    </insert>
+
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from user where id = #{id}
+    </delete>
+
+    <update id="updateUser" parameterType="com.xln.spring.entity.User">
+        update user
+        <set> <!-- 动态SQL语句，使用Set标签可去掉查询字段前后的逗号 -->
+            <if test="name != null and name != ''">
+            name = #{name},
+            </if>
+            <if test="age != null">
+            age = #{age},
+            </if>
+            <if test="birthday! = null">
+            birthday = #{birthday}
+        </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="getCount" resultType="Integer">
+        select count(id) from user
+    </select>
+
+
+    <!-- 使用SQL标签来封装SQL片段-->
+    <sql id="selectUser" >
+        SELECT id,name,age,birthday FROM user
+    </sql>
+
+    <select id="queryAll" resultType="com.xln.spring.entity.User" >
+        <include refid="selectUser" />
+    </select>
+
+    <resultMap id="userAlis" type="com.xln.spring.entity.User">
+        <id column="u_id" property="id" />
+        <result column="u_name" property="name" />
+        <result column="u_age" property="age" />
+        <result column="u_bir" property="birthday" />
+    </resultMap>
+    <select id="queryAllUseResultMap" resultMap="userAlis" >
+        SELECT id as u_id,name as u_name,age as u_age,birthday as u_bir FROM user
+    </select>
+
+    <select id="queryByID" resultType="com.xln.spring.entity.User" parameterType="Integer">
+        <include refid="selectUser" />
+        WHERE id = ${id}
+    </select>
+
+    <!-- SQL语句拼接时推荐使用CONCAT函数-->
+    <select id="queryByName" resultType="com.xln.spring.entity.User" parameterType="String">
+        <include refid="selectUser" />
+        WHERE name like CONCAT('%',#{name},'%')
+    </select>
+    <select id="queryByNameAndAge" resultType="com.xln.spring.entity.User"  >
+        <include refid="selectUser" />
+        <!-- 使用where标签，可动态去掉字句中的多余的 and、or 等关键字 -->
+        <where>
+            <if test="name != null  and name.trim() != ''">
+                and name like CONCAT('%',#{name},'%')
+            </if>
+            <if test="age != null ">
+                and age = #{age}
+            </if>
+        </where>
+    </select>
+
+    <!--使用@Param注解中的别名-->
+    <select id="queryPage" resultType="com.xln.spring.entity.User" >
+        <include refid="selectUser" />
+        limit #{startIndex}, #{pageRows}
+    </select>
+
+</mapper>
